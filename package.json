@@ -1,0 +1,10 @@
+{
+  "name": "event-types-api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@typespec/compiler": "latest",
+    "@typespec/http": "latest",
+    "@typespec/openapi3": "latest"
+  }
+}
