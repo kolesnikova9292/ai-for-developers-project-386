@@ -4,11 +4,11 @@ WORKDIR /app
 
 # Root dependencies (Prism mock API)
 COPY package*.json ./
-RUN npm ci --no-audit --no-fund
+RUN npm ci --include=dev --no-audit --no-fund
 
 # Frontend dependencies
 COPY frontend/package*.json ./frontend/
-RUN cd frontend && npm ci --no-audit --no-fund
+RUN cd frontend && npm ci --include=dev --no-audit --no-fund
 
 # Application sources
 COPY . .
