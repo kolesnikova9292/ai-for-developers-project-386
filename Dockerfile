@@ -1,14 +1,14 @@
-FROM node:20-alpine
+FROM node:22-bookworm-slim
 
 WORKDIR /app
 
 # Root dependencies (Prism mock API)
-COPY package*.json ./
-RUN npm ci --no-audit --no-fund
+COPY package.json ./
+RUN npm install --include=dev --no-audit --no-fund --registry=https://registry.npmjs.org/ --package-lock=false
 
 # Frontend dependencies
-COPY frontend/package*.json ./frontend/
-RUN cd frontend && npm ci --no-audit --no-fund
+COPY frontend/package.json ./frontend/
+RUN cd frontend && npm install --include=dev --no-audit --no-fund --registry=https://registry.npmjs.org/ --package-lock=false
 
 # Application sources
 COPY . .
