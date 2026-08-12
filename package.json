@@ -6,11 +6,9 @@
     "mock": "prism mock tsp-output/@typespec/openapi3/openapi.yaml --port 4010 --cors"
   },
   "dependencies": {
+    "@stoplight/prism-cli": "^5.14.2",
     "@typespec/compiler": "latest",
     "@typespec/http": "latest",
     "@typespec/openapi3": "latest"
-  },
-  "devDependencies": {
-    "@stoplight/prism-cli": "^5.14.2"
   }
 }
