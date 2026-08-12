@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.3...event-types-api-v0.1.4) (2026-08-12)
+
+
+### Bug Fixes
+
+* **docker:** use Node 22 and npm install for Render build ([5e60e1d](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/5e60e1d415fe6bcc4bf5263358244c870bd92d84))
+
 ## [0.1.3](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.2...event-types-api-v0.1.3) (2026-08-12)
 
 
