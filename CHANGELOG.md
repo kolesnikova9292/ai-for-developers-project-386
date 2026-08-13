@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.4...event-types-api-v0.1.5) (2026-08-13)
+
+
+### Bug Fixes
+
+* **docker:** allow Render external hostname in ng serve ([cda85e4](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/cda85e408bef4cc482dc7aeebd59e5d86ee14942))
+
 ## [0.1.4](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.3...event-types-api-v0.1.4) (2026-08-12)
 
 
