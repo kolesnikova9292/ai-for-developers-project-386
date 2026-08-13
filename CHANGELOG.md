@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.5...event-types-api-v0.1.6) (2026-08-13)
+
+
+### Bug Fixes
+
+* **render:** switch to production static server with API proxy ([1d59cd6](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/1d59cd6376e7efd0f2dcd161808449e412360055))
+
 ## [0.1.5](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.4...event-types-api-v0.1.5) (2026-08-13)
 
 
