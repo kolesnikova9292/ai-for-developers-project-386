@@ -1,6 +1,10 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/kolesnikova9292/ai-for-developers-project-386/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kolesnikova9292/ai-for-developers-project-386/actions)
 
+### Published application
+
+https://event-types-app.onrender.com
+
 ### Docker
 
 ```bash
