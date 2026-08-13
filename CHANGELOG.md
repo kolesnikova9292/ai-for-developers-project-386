@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.7...event-types-api-v0.1.8) (2026-08-13)
+
+
+### Bug Fixes
+
+* **mock:** use committed tsp-output for Prism responses ([e5075df](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/e5075dfa55cffe567deea514937091e78a25ba6e))
+
 ## [0.1.7](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.6...event-types-api-v0.1.7) (2026-08-13)
 
 
