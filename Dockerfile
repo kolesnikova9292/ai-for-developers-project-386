@@ -15,9 +15,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install --omit=dev --no-audit --no-fund --registry=https://registry.npmjs.org/ --package-lock=false
 
-COPY main.tsp ./main.tsp
-COPY tspconfig.yaml ./tspconfig.yaml
-RUN npx tsp compile main.tsp
+COPY tsp-output ./tsp-output
 
 COPY server.js ./server.js
 COPY --from=frontend-build /app/frontend/dist/frontend ./frontend-dist

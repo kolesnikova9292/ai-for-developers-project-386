@@ -1,0 +1,230 @@
+openapi: 3.0.0
+info:
+  title: Event Types API
+  version: 0.0.0
+tags: []
+paths:
+  /bookings:
+    post:
+      operationId: GuestBookings_create
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '409':
+          description: The request conflicts with the current state of the server.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictError'
+        '422':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlotUnavailableError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookingRequest'
+  /event-types:
+    get:
+      operationId: EventTypes_list
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EventType'
+    post:
+      operationId: EventTypes_create
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventType'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEventTypeRequest'
+  /event-types/{eventTypeId}/slots:
+    get:
+      operationId: EventTypeSlots_listAvailable
+      parameters:
+        - name: eventTypeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Slot'
+  /owners/{ownerId}/bookings/upcoming:
+    get:
+      operationId: OwnerBookings_list
+      parameters:
+        - name: ownerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+components:
+  schemas:
+    Booking:
+      type: object
+      required:
+        - id
+        - eventTypeId
+        - eventTypeTitle
+        - slotId
+        - startTime
+        - durationMinutes
+        - guestName
+        - guestEmail
+      properties:
+        id:
+          type: string
+        eventTypeId:
+          type: string
+        eventTypeTitle:
+          type: string
+        slotId:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        durationMinutes:
+          type: integer
+          format: int32
+        guestName:
+          type: string
+        guestEmail:
+          type: string
+    ConflictError:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+    CreateBookingRequest:
+      type: object
+      required:
+        - slotId
+        - guestName
+        - guestEmail
+      properties:
+        slotId:
+          type: string
+        guestName:
+          type: string
+        guestEmail:
+          type: string
+    CreateEventTypeRequest:
+      type: object
+      required:
+        - ownerId
+        - title
+        - description
+        - durationMinutes
+      properties:
+        ownerId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        durationMinutes:
+          type: integer
+          format: int32
+    EventType:
+      type: object
+      required:
+        - id
+        - ownerId
+        - title
+        - description
+        - durationMinutes
+      properties:
+        id:
+          type: string
+        ownerId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        durationMinutes:
+          type: integer
+          format: int32
+    Owner:
+      type: object
+      required:
+        - id
+        - name
+        - email
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+    Slot:
+      type: object
+      required:
+        - id
+        - eventTypeId
+        - startTime
+        - durationMinutes
+        - isBooked
+      properties:
+        id:
+          type: string
+        eventTypeId:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        durationMinutes:
+          type: integer
+          format: int32
+        isBooked:
+          type: boolean
+    SlotUnavailableError:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
