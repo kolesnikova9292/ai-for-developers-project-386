@@ -15,6 +15,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Booking'
+              example:
+                id: booking-new-001
+                eventTypeId: et-001
+                eventTypeTitle: Консультация
+                slotId: slot-001
+                startTime: '2026-08-11T10:00:00Z'
+                durationMinutes: 30
+                guestName: Иван Петров
+                guestEmail: ivan.petrov@example.com
         '409':
           description: The request conflicts with the current state of the server.
           content:
@@ -46,6 +55,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/EventType'
+              example:
+                - id: et-001
+                  ownerId: owner-yulia-001
+                  title: Консультация
+                  description: Индивидуальная консультация с Юлией — обсуждение вашего проекта или вопроса.
+                  durationMinutes: 30
+                - id: et-002
+                  ownerId: owner-yulia-001
+                  title: Стратегическая сессия
+                  description: Глубокий разбор стратегии, планирование и постановка целей.
+                  durationMinutes: 60
+                - id: et-003
+                  ownerId: owner-yulia-001
+                  title: Быстрый созвон
+                  description: Короткий звонок для оперативного решения вопроса.
+                  durationMinutes: 15
     post:
       operationId: EventTypes_create
       parameters: []
@@ -56,6 +81,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventType'
+              example:
+                id: et-new-001
+                ownerId: owner-yulia-001
+                title: Новое событие
+                description: Описание нового события
+                durationMinutes: 45
       requestBody:
         required: true
         content:
@@ -80,6 +111,32 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Slot'
+              example:
+                - id: slot-001
+                  eventTypeId: et-001
+                  startTime: '2026-08-11T10:00:00Z'
+                  durationMinutes: 15
+                  isBooked: false
+                - id: slot-002
+                  eventTypeId: et-001
+                  startTime: '2026-08-11T14:00:00Z'
+                  durationMinutes: 30
+                  isBooked: false
+                - id: slot-003
+                  eventTypeId: et-001
+                  startTime: '2026-08-12T10:00:00Z'
+                  durationMinutes: 60
+                  isBooked: false
+                - id: slot-004
+                  eventTypeId: et-001
+                  startTime: '2026-08-12T14:00:00Z'
+                  durationMinutes: 30
+                  isBooked: false
+                - id: slot-005
+                  eventTypeId: et-001
+                  startTime: '2026-08-13T10:00:00Z'
+                  durationMinutes: 60
+                  isBooked: false
   /owners/{ownerId}/bookings/upcoming:
     get:
       operationId: OwnerBookings_list
@@ -98,6 +155,23 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Booking'
+              example:
+                - id: booking-001
+                  eventTypeId: et-001
+                  eventTypeTitle: Консультация
+                  slotId: slot-010
+                  startTime: '2026-08-13T10:00:00Z'
+                  durationMinutes: 30
+                  guestName: Иван Петров
+                  guestEmail: ivan.petrov@example.com
+                - id: booking-002
+                  eventTypeId: et-002
+                  eventTypeTitle: Стратегическая сессия
+                  slotId: slot-011
+                  startTime: '2026-08-14T14:00:00Z'
+                  durationMinutes: 60
+                  guestName: Мария Сидорова
+                  guestEmail: maria.sidorova@example.com
 components:
   schemas:
     Booking:
