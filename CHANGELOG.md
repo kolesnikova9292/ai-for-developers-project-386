@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.6...event-types-api-v0.1.7) (2026-08-13)
+
+
+### Bug Fixes
+
+* **docker:** generate tsp-output during image build ([32e7d82](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/32e7d82e287c4ef61fb185df5f6fd0f2cbb2f054))
+
 ## [0.1.6](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.5...event-types-api-v0.1.6) (2026-08-13)
 
 
