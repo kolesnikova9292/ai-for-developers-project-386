@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.8...event-types-api-v0.1.9) (2026-08-13)
+
+
+### Bug Fixes
+
+* **mock:** restore OpenAPI examples for Prism ([47e309f](https://github.com/kolesnikova9292/ai-for-developers-project-386/commit/47e309fa81669caa3a7f405caac2da11d3cd3853))
+
 ## [0.1.8](https://github.com/kolesnikova9292/ai-for-developers-project-386/compare/event-types-api-v0.1.7...event-types-api-v0.1.8) (2026-08-13)
 
 
