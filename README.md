@@ -9,7 +9,7 @@ docker run --rm -p 4200:4200 -e PORT=4200 event-types-app
 ```
 
 Frontend: `http://localhost:4200`  
-Mock API (inside container): `http://localhost:4010`
+Mock API proxy: `http://localhost:4200/api/...`
 
 ### Deploy on Render
 
