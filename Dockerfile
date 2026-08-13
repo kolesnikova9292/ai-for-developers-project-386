@@ -17,4 +17,4 @@ ENV PORT=4200
 EXPOSE 4200
 
 # Start mock API and frontend app
-CMD ["sh", "-c", "./node_modules/.bin/prism mock tsp-output/@typespec/openapi3/openapi.yaml --port 4010 --cors & ./frontend/node_modules/.bin/ng serve --host 0.0.0.0 --port ${PORT}"]
+CMD ["sh", "-c", "ALLOWED_HOST=\"${RENDER_EXTERNAL_HOSTNAME:-event-types-app.onrender.com}\"; ./node_modules/.bin/prism mock tsp-output/@typespec/openapi3/openapi.yaml --port 4010 --cors & ./frontend/node_modules/.bin/ng serve --host 0.0.0.0 --allowed-hosts \"$ALLOWED_HOST\" --port ${PORT}"]
